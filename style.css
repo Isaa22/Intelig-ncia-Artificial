@@ -1,4 +1,4 @@
-/* style.css – Tema azul hacker / cyber */
+/* style.css – Tema Lua Azul Escuro (Dark Moon Blue) */
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +6,8 @@
 }
 
 body {
-  background: radial-gradient(circle at 20% 30%, #0b1a2e, #02090f);
-  color: #b0e0ff;
+  background: radial-gradient(ellipse at 30% 20%, #0a1a2f, #030811);
+  color: #b8d6ff;
   font-family: 'Share Tech Mono', monospace;
   min-height: 100vh;
   display: flex;
@@ -19,11 +19,11 @@ body {
 #app {
   max-width: 950px;
   width: 100%;
-  background: rgba(0, 20, 40, 0.7);
-  backdrop-filter: blur(4px);
-  border: 1px solid #1e6f9f;
-  box-shadow: 0 0 30px rgba(0, 120, 255, 0.2);
-  border-radius: 20px;
+  background: rgba(4, 14, 30, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid #2a5f8a;
+  box-shadow: 0 0 40px rgba(30, 100, 200, 0.15), 0 0 80px rgba(10, 60, 150, 0.1);
+  border-radius: 24px;
   padding: 1.8rem 2rem 1.5rem;
   transition: all 0.2s;
 }
@@ -33,8 +33,8 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: #5bb4ff;
-  border-bottom: 1px dashed #1a5f8a;
+  color: #7bb9ff;
+  border-bottom: 1px solid #1a4a6a;
   padding-bottom: 0.4rem;
   margin-bottom: 0.8rem;
   letter-spacing: 1px;
@@ -43,9 +43,9 @@ body {
 h1 {
   font-size: 2.6rem;
   font-weight: 400;
-  color: #7fcbff;
-  text-shadow: 0 0 10px #0077ff, 0 0 20px #003faa;
-  letter-spacing: 6px;
+  color: #9acdff;
+  text-shadow: 0 0 15px #1a6fcf, 0 0 30px #003f8a, 0 0 60px #001f4a;
+  letter-spacing: 8px;
   text-align: center;
   margin: 0.2rem 0;
   word-break: break-word;
@@ -56,39 +56,41 @@ h1 {
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
-  border-bottom: 1px solid #1e5f8a;
+  border-bottom: 1px solid #1a4f7a;
   padding-bottom: 0.3rem;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
-  color: #7abfff;
+  color: #8fcbff;
 }
 
 .prompt {
-  background: #0a2640;
+  background: #0a1f33;
   padding: 0.1rem 0.8rem;
   border-radius: 30px;
-  border: 1px solid #1e7fbf;
+  border: 1px solid #2a6f9f;
+  box-shadow: 0 0 10px rgba(30, 100, 200, 0.2);
 }
 
 .tagline {
   opacity: 0.8;
   font-style: italic;
+  color: #aacdff;
 }
 
 /* TERMINAL */
 .terminal {
-  background: #081a2a;
-  border-radius: 18px;
-  border: 1px solid #1f6f9f;
+  background: #060f1d;
+  border-radius: 20px;
+  border: 1px solid #1a5a7a;
   padding: 0.6rem 1rem 1rem;
-  box-shadow: inset 0 0 20px rgba(0, 40, 80, 0.6);
+  box-shadow: inset 0 0 30px rgba(0, 30, 70, 0.7), 0 0 20px rgba(0, 60, 150, 0.2);
 }
 
 .terminal-header {
   display: flex;
   justify-content: space-between;
-  color: #5bb4ff;
-  border-bottom: 1px solid #164a6a;
+  color: #7bb9ff;
+  border-bottom: 1px solid #123a5a;
   padding-bottom: 0.3rem;
   margin-bottom: 0.8rem;
   font-size: 0.9rem;
@@ -96,12 +98,13 @@ h1 {
 
 .blink {
   animation: blink 1.2s infinite;
-  color: #00ccff;
+  color: #7fcbff;
+  text-shadow: 0 0 10px #0099ff;
 }
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.1; }
+  50% { opacity: 0.15; }
 }
 
 .terminal-body {
@@ -117,34 +120,38 @@ h1 {
 }
 
 .prompt-line {
-  color: #8bcbff;
+  color: #9acdff;
 }
 
 .quest-line {
-  color: #aad0ff;
+  color: #b0daff;
   font-weight: bold;
   font-size: 1.1rem;
-  background: #0d2840;
-  padding: 0.1rem 0.6rem;
-  border-radius: 20px;
+  background: #0a1f33;
+  padding: 0.1rem 0.8rem;
+  border-radius: 30px;
   display: inline-block;
   align-self: flex-start;
+  border: 1px solid #1a5f8a;
+  box-shadow: 0 0 12px rgba(0, 100, 200, 0.15);
 }
 
 .alert-line {
-  color: #7fcbff;
-  background: #0a1f33;
-  padding: 0.5rem 0.8rem;
-  border-left: 4px solid #0099ff;
-  border-radius: 0 12px 12px 0;
+  color: #b8d6ff;
+  background: #081a2a;
+  padding: 0.6rem 0.8rem;
+  border-left: 4px solid #2a8fdf;
+  border-radius: 0 16px 16px 0;
   margin: 0.2rem 0;
+  box-shadow: inset 0 0 20px rgba(0, 60, 150, 0.1);
 }
 
 .options-title {
-  color: #6ab0ff;
+  color: #7bb9ff;
   margin-top: 0.3rem;
   font-size: 0.9rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  opacity: 0.9;
 }
 
 .options-grid {
@@ -155,39 +162,39 @@ h1 {
 }
 
 .option-btn {
-  background: #0b2338;
-  border: 1.5px solid #1a6a9a;
-  color: #b5dcff;
+  background: #081a2e;
+  border: 1.5px solid #1a5a8a;
+  color: #b8d6ff;
   padding: 0.7rem 0.5rem;
   border-radius: 40px;
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: 0.15s;
-  box-shadow: 0 0 6px rgba(0, 100, 200, 0.1);
+  transition: 0.2s;
+  box-shadow: 0 0 8px rgba(0, 60, 150, 0.1);
   text-align: center;
   line-height: 1.3;
 }
 
 .option-btn:hover {
-  background: #1a4060;
-  border-color: #3aafff;
-  box-shadow: 0 0 20px #0080ff80;
+  background: #0f2a44;
+  border-color: #4aafff;
+  box-shadow: 0 0 30px #0088ff60, 0 0 60px #0044aa40;
   transform: scale(1.02);
-  color: #fff;
+  color: #ffffff;
 }
 
 .option-btn:active {
   transform: scale(0.95);
 }
 
-/* PROGRESS */
+/* PROGRESS - estilo lunar */
 .progress-area {
   margin-top: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  color: #7fcbff;
+  color: #8fcbff;
   font-size: 0.8rem;
   flex-wrap: wrap;
 }
@@ -195,24 +202,25 @@ h1 {
 .progress-bar {
   flex: 1;
   height: 10px;
-  background: #123a55;
+  background: #0a1f33;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: inset 0 0 6px #0a1f2f;
+  box-shadow: inset 0 0 10px #020f1f, 0 0 8px #00448840;
 }
 
 .progress-fill {
   height: 100%;
   width: 20%;
-  background: linear-gradient(90deg, #0088ff, #5bc0ff);
+  background: linear-gradient(90deg, #1a6fcf, #7fcbff, #b0daff);
   border-radius: 30px;
-  box-shadow: 0 0 12px #0099ff;
+  box-shadow: 0 0 20px #1a7fdf, 0 0 40px #0055bb60;
   transition: width 0.25s ease;
 }
 
 #progressPercent {
   min-width: 3.2rem;
   text-align: right;
+  color: #b0daff;
 }
 
 /* FOOTER */
@@ -227,37 +235,38 @@ footer {
 
 .cyber-button {
   background: transparent;
-  border: 1.5px solid #1f7fbf;
+  border: 1.5px solid #1a5f8a;
   color: #8fcbff;
   font-family: 'Share Tech Mono', monospace;
-  padding: 0.4rem 1.4rem;
+  padding: 0.4rem 1.6rem;
   border-radius: 40px;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: 0.2s;
-  box-shadow: 0 0 8px #00448833;
+  transition: 0.25s;
+  box-shadow: 0 0 10px #00448833;
 }
 
 .cyber-button:hover {
-  background: #00448855;
-  border-color: #5bbaff;
+  background: #0a2a4a;
+  border-color: #4aafff;
   color: white;
-  box-shadow: 0 0 20px #0088ff;
+  box-shadow: 0 0 30px #0088ff70, 0 0 60px #0044aa30;
 }
 
 .footer-stats {
   font-size: 1rem;
-  color: #7fcbff;
-  background: #0b1f33;
-  padding: 0.2rem 1.2rem;
+  color: #8fcbff;
+  background: #071a2a;
+  padding: 0.2rem 1.4rem;
   border-radius: 40px;
   border: 1px solid #1a5f8a;
+  box-shadow: inset 0 0 10px #00336630;
 }
 
 /* responsivo */
 @media (max-width: 580px) {
   #app { padding: 1rem; }
-  h1 { font-size: 2rem; letter-spacing: 3px; }
+  h1 { font-size: 2rem; letter-spacing: 4px; }
   .options-grid { grid-template-columns: 1fr; }
   .subhead { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
   .status-bar { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
