@@ -1,0 +1,264 @@
+/* style.css – Tema azul hacker / cyber */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at 20% 30%, #0b1a2e, #02090f);
+  color: #b0e0ff;
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+#app {
+  max-width: 950px;
+  width: 100%;
+  background: rgba(0, 20, 40, 0.7);
+  backdrop-filter: blur(4px);
+  border: 1px solid #1e6f9f;
+  box-shadow: 0 0 30px rgba(0, 120, 255, 0.2);
+  border-radius: 20px;
+  padding: 1.8rem 2rem 1.5rem;
+  transition: all 0.2s;
+}
+
+/* HEADER */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #5bb4ff;
+  border-bottom: 1px dashed #1a5f8a;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: #7fcbff;
+  text-shadow: 0 0 10px #0077ff, 0 0 20px #003faa;
+  letter-spacing: 6px;
+  text-align: center;
+  margin: 0.2rem 0;
+  word-break: break-word;
+}
+
+.subhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #1e5f8a;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #7abfff;
+}
+
+.prompt {
+  background: #0a2640;
+  padding: 0.1rem 0.8rem;
+  border-radius: 30px;
+  border: 1px solid #1e7fbf;
+}
+
+.tagline {
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* TERMINAL */
+.terminal {
+  background: #081a2a;
+  border-radius: 18px;
+  border: 1px solid #1f6f9f;
+  padding: 0.6rem 1rem 1rem;
+  box-shadow: inset 0 0 20px rgba(0, 40, 80, 0.6);
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  color: #5bb4ff;
+  border-bottom: 1px solid #164a6a;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.blink {
+  animation: blink 1.2s infinite;
+  color: #00ccff;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.1; }
+}
+
+.terminal-body {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.line {
+  padding: 0.2rem 0;
+  font-size: 1rem;
+}
+
+.prompt-line {
+  color: #8bcbff;
+}
+
+.quest-line {
+  color: #aad0ff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background: #0d2840;
+  padding: 0.1rem 0.6rem;
+  border-radius: 20px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.alert-line {
+  color: #7fcbff;
+  background: #0a1f33;
+  padding: 0.5rem 0.8rem;
+  border-left: 4px solid #0099ff;
+  border-radius: 0 12px 12px 0;
+  margin: 0.2rem 0;
+}
+
+.options-title {
+  color: #6ab0ff;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.option-btn {
+  background: #0b2338;
+  border: 1.5px solid #1a6a9a;
+  color: #b5dcff;
+  padding: 0.7rem 0.5rem;
+  border-radius: 40px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.15s;
+  box-shadow: 0 0 6px rgba(0, 100, 200, 0.1);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.option-btn:hover {
+  background: #1a4060;
+  border-color: #3aafff;
+  box-shadow: 0 0 20px #0080ff80;
+  transform: scale(1.02);
+  color: #fff;
+}
+
+.option-btn:active {
+  transform: scale(0.95);
+}
+
+/* PROGRESS */
+.progress-area {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #7fcbff;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 10px;
+  background: #123a55;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: inset 0 0 6px #0a1f2f;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(90deg, #0088ff, #5bc0ff);
+  border-radius: 30px;
+  box-shadow: 0 0 12px #0099ff;
+  transition: width 0.25s ease;
+}
+
+#progressPercent {
+  min-width: 3.2rem;
+  text-align: right;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.8rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.cyber-button {
+  background: transparent;
+  border: 1.5px solid #1f7fbf;
+  color: #8fcbff;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 0.4rem 1.4rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 0 8px #00448833;
+}
+
+.cyber-button:hover {
+  background: #00448855;
+  border-color: #5bbaff;
+  color: white;
+  box-shadow: 0 0 20px #0088ff;
+}
+
+.footer-stats {
+  font-size: 1rem;
+  color: #7fcbff;
+  background: #0b1f33;
+  padding: 0.2rem 1.2rem;
+  border-radius: 40px;
+  border: 1px solid #1a5f8a;
+}
+
+/* responsivo */
+@media (max-width: 580px) {
+  #app { padding: 1rem; }
+  h1 { font-size: 2rem; letter-spacing: 3px; }
+  .options-grid { grid-template-columns: 1fr; }
+  .subhead { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .status-bar { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+}
