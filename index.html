@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HACK THE FUTURE · IA</title>
+  <!-- CSS separado -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonte monospace para clima hacker -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Cabeçalho cyber -->
+    <header>
+      <div class="status-bar">
+        <span>🛡️ SYSTEM: ONLINE</span>
+        <span>🔐 ENCRYPTION: ACTIVE</span>
+      </div>
+      <h1>█ HACK THE FUTURE █</h1>
+      <div class="subhead">
+        <span class="prompt">>_ RASINFORMATICA_💀</span>
+        <span class="tagline">[ DECODIFICANDO O DESTINO DA IA ]</span>
+      </div>
+    </header>
+
+    <!-- Terminal principal -->
+    <main>
+      <div class="terminal">
+        <div class="terminal-header">
+          <span>root@hacker:~$ ./ia_decision_matrix.sh</span>
+          <span class="blink">⬤</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="line prompt-line">➜ ~ $ INITIALIZING NEURAL INTERFACE...</div>
+          <div class="line quest-line" id="questDisplay">[QUEST] NÍVEL 1/5</div>
+          <div class="line alert-line" id="alertDisplay">[ALERTA] NOVA IA QUANTICA DETECTADA. CAPACIDADE: PROCESSAMENTO PARALELO INFINITO. COMO REAGIR?</div>
+          <div class="line options-title">[OPÇÕES] >_ ESCOLHA SEU DESTINO</div>
+          <div class="options-grid" id="optionsGrid">
+            <!-- gerado via JS -->
+          </div>
+        </div>
+        <!-- Barra de progresso -->
+        <div class="progress-area">
+          <span>PROGRESSO DA JORNADA</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 20%;"></div>
+          </div>
+          <span id="progressPercent">20%</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Rodapé com contador / reset -->
+    <footer>
+      <button id="resetBtn" class="cyber-button">⟳ REINICIAR MISSÃO</button>
+      <span class="footer-stats">NÍVEL <span id="levelDisplay">1</span>/5</span>
+    </footer>
+  </div>
+
+  <!-- JavaScript separado -->
+  <script src="script.js"></script>
+</body>
+</html>
