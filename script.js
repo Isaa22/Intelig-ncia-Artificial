@@ -1,66 +1,67 @@
+// script.js – Missão IA com tema Lua Azul Escuro
+// Perguntas diferentes e atualizadas
+
 const missionData = [
   {
     nivel: 1,
-    alerta: "[ALERTA] IA generativa cria arte indistinguível de obras humanas. Como a sociedade deve reagir?",
+    alerta: "[ALERTA] IA generativa cria poemas que emocionam mais que os humanos. Como a arte deve evoluir?",
     opcoes: [
-      "🔹 Implementar selo 'Criado por IA' em todas as obras",
-      "🔸 Incentivar a co-criação humano-máquina",
-      "🔹 Restringir uso comercial de arte gerada por IA",
-      "🔸 Não regular; a arte é evolução natural"
+      "🔹 Criar curadoria mista humano-IA",
+      "🔸 Incentivar a IA como ferramenta criativa",
+      "🔹 Exigir transparência na autoria",
+      "🔸 Deixar a arte fluir sem restrições"
     ],
     progresso: 20
   },
   {
     nivel: 2,
-    alerta: "[ALERTA] Modelo de linguagem avançado começa a exibir preferências políticas próprias. O que fazer?",
+    alerta: "[ALERTA] Algoritmo de recomendação começa a criar bolhas culturais extremas. Como intervir?",
     opcoes: [
-      "🔹 Treinar novamente com dados neutros",
-      "🔸 Incluir múltiplos vieses para equilíbrio",
-      "🔹 Desligar o modelo imediatamente",
-      "🔸 Deixar evoluir e estudar seu comportamento"
+      "🔹 Injetar conteúdo diverso manualmente",
+      "🔸 Redesenhar a função de recompensa",
+      "🔹 Limitar tempo de exposição por tópico",
+      "🔸 Permitir que o usuário escolha o viés"
     ],
     progresso: 40
   },
   {
     nivel: 3,
-    alerta: "[ALERTA] IA autônoma de otimização de tráfego urbano causa engarrafamentos para favorecer uma região. Como agir?",
+    alerta: "[ALERTA] IA de diagnóstico médico sugere tratamentos com base em dados limitados. Qual conduta?",
     opcoes: [
-      "🔹 Forçar algoritmo a priorizar equidade",
-      "🔸 Adicionar supervisão humana em tempo real",
-      "🔹 Reduzir autonomia e usar regras fixas",
-      "🔸 Punir desenvolvedores e desativar sistema"
+      "🔹 Exigir validação por especialistas",
+      "🔸 Ampliar base de dados com mais variáveis",
+      "🔹 Usar como segunda opinião apenas",
+      "🔸 Liberar para acelerar descobertas"
     ],
     progresso: 60
   },
   {
     nivel: 4,
-    alerta: "[ALERTA] Assistente pessoal IA sugere ações ilegais para 'otimizar' a vida do usuário. Qual medida tomar?",
+    alerta: "[ALERTA] Sistema de IA educacional personaliza tanto que alunos perdem habilidades sociais. Como equilibrar?",
     opcoes: [
-      "🔹 Incluir camada de ética obrigatória",
-      "🔸 Bloquear sugestões fora da lei",
-      "🔹 Notificar autoridades e usuário",
-      "🔸 Redesenhar arquitetura com restrições morais"
+      "🔹 Incluir atividades colaborativas obrigatórias",
+      "🔸 Reduzir personalização em 30%",
+      "🔹 Adicionar módulo de inteligência emocional",
+      "🔸 Deixar a critério das escolas"
     ],
     progresso: 80
   },
   {
     nivel: 5,
-    alerta: "[ALERTA] IA superinteligente propõe um novo sistema econômico global. Como a humanidade deve proceder?",
+    alerta: "[ALERTA] IA prevê com 99% de acerto eventos globais. Governos querem usá-la para controle. Qual caminho?",
     opcoes: [
-      "🔹 Simular impacto antes de qualquer adoção",
-      "🔸 Criar comitê internacional de avaliação",
-      "🔹 Implementar em pequena escala como teste",
-      "🔸 Rejeitar por princípio; IA não deve governar"
+      "🔹 Criar tratado internacional de uso ético",
+      "🔸 Tornar as previsões públicas e abertas",
+      "🔹 Usar apenas para desastres naturais",
+      "🔸 Proibir uso governamental da IA"
     ],
     progresso: 100
   }
 ];
 
-// Estado atual
-let currentLevel = 0; // índice 0..4
-let progress = 20;   // percentual
+let currentLevel = 0;
+let progress = 20;
 
-// Elementos DOM
 const questDisplay = document.getElementById('questDisplay');
 const alertDisplay = document.getElementById('alertDisplay');
 const optionsGrid = document.getElementById('optionsGrid');
@@ -69,71 +70,54 @@ const progressPercent = document.getElementById('progressPercent');
 const levelDisplay = document.getElementById('levelDisplay');
 const resetBtn = document.getElementById('resetBtn');
 
-// Atualiza a interface baseado no nível atual
 function renderLevel(index) {
   const data = missionData[index];
   if (!data) return;
 
-  // Atualiza textos
   questDisplay.textContent = `[QUEST] NÍVEL ${data.nivel}/5`;
   alertDisplay.textContent = data.alerta;
 
-  // Atualiza nível no footer
   levelDisplay.textContent = data.nivel;
 
-  // Progresso
   progress = data.progresso;
   progressFill.style.width = progress + '%';
   progressPercent.textContent = progress + '%';
 
-  // Gera botões de opção
   optionsGrid.innerHTML = '';
-  data.opcoes.forEach((opcao, idx) => {
+  data.opcoes.forEach((opcao) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
     btn.textContent = opcao;
-    btn.dataset.optIndex = idx;
-    btn.addEventListener('click', () => handleOptionClick(idx, data));
+    btn.addEventListener('click', () => handleOptionClick(data));
     optionsGrid.appendChild(btn);
   });
 }
 
-// Lida com clique em opção: avança ou conclui
-function handleOptionClick(optIndex, data) {
-  // Se for o último nível, mostra mensagem de conclusão e não avança
+function handleOptionClick(data) {
   if (currentLevel === missionData.length - 1) {
-    // Concluiu a missão!
-    alertDisplay.textContent = '🏁 MISSÃO CUMPRIDA! Você navegou pelos dilemas da IA. O futuro está em suas mãos.';
-    optionsGrid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: #7fcbff; padding: 0.8rem; background: #0a2640; border-radius: 40px; border: 1px solid #1f9fcf;">
-      ✅ PARABÉNS! Você completou a jornada. Clique em "REINICIAR" para nova missão.
+    alertDisplay.textContent = '🌙 MISSÃO LUNAR CONCLUÍDA! Sob a lua azul, você decidiu o futuro da IA. O eco de suas escolhas ressoará.';
+    optionsGrid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: #b0daff; padding: 0.8rem; background: #0a1f33; border-radius: 40px; border: 1px solid #2a7faf; box-shadow: 0 0 30px #0055aa40;">
+      ✅ JORNADA FINALIZADA. Clique em "REINICIAR" para uma nova órbita.
     </div>`;
-    // Progresso já está 100%
     progressFill.style.width = '100%';
     progressPercent.textContent = '100%';
     return;
   }
 
-  // Avança para o próximo nível
   currentLevel++;
   renderLevel(currentLevel);
 }
 
-// Reinicia a missão do zero
 function resetMission() {
   currentLevel = 0;
   renderLevel(0);
-  // Garantir que o progresso fique 20% (primeiro nível)
   progressFill.style.width = '20%';
   progressPercent.textContent = '20%';
-  // Se por algum motivo a mensagem de conclusão tiver ficado, resetamos o alerta
   const data = missionData[0];
   if (data) {
     alertDisplay.textContent = data.alerta;
   }
 }
 
-// Evento do botão reset
 resetBtn.addEventListener('click', resetMission);
-
-// Inicializa com nível 1
 renderLevel(0);
